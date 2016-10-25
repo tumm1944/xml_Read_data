@@ -1,8 +1,8 @@
-import numpy as NP
+import numpy as np
 import matplotlib.pyplot as plt
 import sys
 
-data = NP.genfromtxt('data_coffee_icecream_GA.txt', delimiter = ' ')
+data = np.genfromtxt('data_coffee_icecream_GA.txt', delimiter = ' ')
 zip_zip = data[:,1]
 pop_zip = data[:,2]
 coffee_results = data[:,3]
@@ -14,13 +14,13 @@ for i in range(len(data)):
     if icecream_results[i]==0:
         icecream_results[i]=1
 
-zip_zip          = NP.array((zip_zip))
-pop_zip          = NP.array((pop_zip))
-coffee_results   = NP.array((coffee_results))
-icecream_results = NP.array((icecream_results))
+zip_zip          = np.array((zip_zip))
+pop_zip          = np.array((pop_zip))
+coffee_results   = np.array((coffee_results))
+icecream_results = np.array((icecream_results))
 
-coffee_stack  =  NP.column_stack((zip_zip,pop_zip/coffee_results))
-icecream_stack = NP.column_stack((zip_zip,pop_zip/icecream_results))
+coffee_stack  =  np.column_stack((zip_zip,pop_zip/coffee_results))
+icecream_stack = np.column_stack((zip_zip,pop_zip/icecream_results))
 
 sort_col=1
 coffee_stack_sorted   = coffee_stack[coffee_stack[:,sort_col].argsort()]
